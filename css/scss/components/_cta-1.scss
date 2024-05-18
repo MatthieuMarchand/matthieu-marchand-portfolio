@@ -1,0 +1,73 @@
+$cta1-transition: 0.3s ease, opacity 0.15s;
+$cta1-arrow-distance: 100%;
+$cta1-gap-top-and-bottom: 1rem;
+$cta1-gap-large: 4rem;
+$cta1-gap-small: 2rem;
+
+.cta-1 {
+  position: relative;
+  color: $black;
+  text-decoration: unset;
+  overflow: hidden;
+  border: 1px solid $black;
+  padding: $cta1-gap-top-and-bottom $cta1-gap-large $cta1-gap-top-and-bottom
+    $cta1-gap-small;
+  transition: $cta1-transition;
+}
+
+.cta-1:hover {
+  padding-left: $cta1-gap-large;
+  padding-right: $cta1-gap-small;
+}
+
+.cta-1::before {
+  content: url(/pictures/arrow-desktop.svg);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: -$cta1-arrow-distance -50%;
+  transition: $cta1-transition;
+  opacity: 0;
+}
+
+.cta-1:hover::before {
+  translate: $cta1-gap-small -50%;
+  opacity: 1;
+}
+
+.cta-1::after {
+  content: url(/pictures/arrow-desktop.svg);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: -$cta1-gap-small -50%;
+  transition: $cta1-transition;
+}
+
+.cta-1:hover::after {
+  translate: $cta1-arrow-distance -50%;
+  opacity: 0;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .cta-1,
+  .cta-1::after,
+  .cta-1::before,
+  .cta-1:hover,
+  .cta-1:hover::after,
+  .cta-1:hover::before {
+    $cta1-gap-top-and-bottom: 0.75rem;
+    $cta1-gap-large: 3rem;
+    $cta1-gap-small: 1.5rem;
+  }
+
+  .cta-1::before {
+    content: url(/pictures/arrow-mobile.svg);
+  }
+
+  .cta-1::after {
+    content: url(/pictures/arrow-mobile.svg);
+  }
+}

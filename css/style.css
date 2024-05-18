@@ -1,0 +1,208 @@
+@font-face {
+  font-family: "Thunder-SemiBoldHC";
+  src: url("/fonts/Thunder-SemiBoldHC.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Light";
+  src: url("/fonts/Satoshi-Light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  background: #f6f6f6;
+  color: #101010;
+  font-family: "Satoshi-Regular";
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+p.text-paragraphe-default {
+  line-height: 135%;
+}
+
+br.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 55rem) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  br.mobile {
+    display: unset;
+  }
+  br.desktop {
+    display: none;
+  }
+}
+section.square {
+  position: relative;
+  width: 92.5dvw;
+  height: calc(100dvh - 7.5dvw);
+  border: 1px solid #101010;
+  box-sizing: border-box;
+}
+section.square footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+  translate: 0 100%;
+  padding-top: 0.5rem;
+}
+section.square footer a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #101010;
+  text-decoration: unset;
+}
+section.square footer a::before {
+  content: "";
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid #101010;
+  box-sizing: border-box;
+}
+section.square footer a:hover::before {
+  background: #101010;
+}
+
+@media screen and (max-width: 55rem) {
+  section.square {
+    width: calc(100dvw - 2rem);
+    height: calc(100dvh - 3rem);
+  }
+  section.square footer {
+    padding-top: 0.25rem;
+  }
+}
+.cta-1 {
+  position: relative;
+  color: #101010;
+  text-decoration: unset;
+  overflow: hidden;
+  border: 1px solid #101010;
+  padding: 1rem 4rem 1rem 2rem;
+  transition: 0.3s ease, opacity 0.15s;
+}
+
+.cta-1:hover {
+  padding-left: 4rem;
+  padding-right: 2rem;
+}
+
+.cta-1::before {
+  content: url(/pictures/arrow-desktop.svg);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: -100% -50%;
+  transition: 0.3s ease, opacity 0.15s;
+  opacity: 0;
+}
+
+.cta-1:hover::before {
+  translate: 2rem -50%;
+  opacity: 1;
+}
+
+.cta-1::after {
+  content: url(/pictures/arrow-desktop.svg);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: -2rem -50%;
+  transition: 0.3s ease, opacity 0.15s;
+}
+
+.cta-1:hover::after {
+  translate: 100% -50%;
+  opacity: 0;
+}
+
+@media screen and (max-width: 55rem) {
+  .cta-1::before {
+    content: url(/pictures/arrow-mobile.svg);
+  }
+  .cta-1::after {
+    content: url(/pictures/arrow-mobile.svg);
+  }
+}
+section#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#home .content {
+  height: 18rem;
+  display: flex;
+  gap: 3rem;
+}
+
+section#home .content .texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+}
+section#home .content .texts .titles h1 {
+  font-family: "Thunder-SemiBoldHC";
+  font-size: 56px;
+  letter-spacing: 2px;
+}
+section#home .content .texts .titles h2 {
+  font-family: "Satoshi-Light";
+  font-size: 24px;
+}
+
+@media screen and (max-width: 55rem) {
+  section#home {
+    justify-content: start;
+  }
+  section#home .content {
+    flex-direction: column;
+    align-items: start;
+    height: unset;
+    gap: 1.5rem;
+    margin-left: 2rem;
+  }
+  section#home .content img {
+    height: 9rem;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section#home .content .texts {
+    gap: 1.5rem;
+  }
+  section#home .content .texts .titles h1 {
+    font-size: 32px;
+  }
+  section#home .content .texts .titles h2 {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=style.css.map */

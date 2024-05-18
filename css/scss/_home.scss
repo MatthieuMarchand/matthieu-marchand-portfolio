@@ -1,0 +1,63 @@
+section#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    height: 18rem;
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+section#home .content .texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+
+  .titles {
+    h1 {
+      @include font("Thunder-SemiBoldHC", 56px);
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      @include font($light, 24px);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  section#home {
+    justify-content: start;
+  }
+
+  section#home .content {
+    flex-direction: column;
+    align-items: start;
+    height: unset;
+    gap: 1.5rem;
+    margin-left: 2rem;
+
+    img {
+      height: 9rem;
+      object-fit: contain;
+    }
+
+    .texts {
+      gap: 1.5rem;
+
+      .titles {
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

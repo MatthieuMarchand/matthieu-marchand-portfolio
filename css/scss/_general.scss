@@ -1,0 +1,36 @@
+html,
+body {
+  background: $white;
+  color: $black;
+  @include font($regular, $min-font-size-desktop);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+p.text-paragraphe-default {
+  line-height: 135%;
+}
+
+br.mobile {
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  html,
+  body {
+    font-size: $min-font-size-mobile;
+  }
+
+  br.mobile {
+    display: unset;
+  }
+
+  br.desktop {
+    display: none;
+  }
+}

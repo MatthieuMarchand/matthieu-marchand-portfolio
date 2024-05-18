@@ -1,0 +1,54 @@
+section.square {
+  position: relative;
+  width: calc(100dvw - 7.5dvw);
+  height: calc(100dvh - 7.5dvw);
+  // width: calc(100% - 6rem);
+  // height: calc(100% - 6rem);
+  border: 1px solid $black;
+  box-sizing: border-box;
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+    translate: 0 100%;
+    padding-top: 0.5rem;
+
+    a {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      color: $black;
+      text-decoration: unset;
+    }
+
+    a::before {
+      content: "";
+      display: block;
+      width: 0.75rem;
+      height: 0.75rem;
+      border: 1px solid $black;
+      box-sizing: border-box;
+    }
+
+    a:hover::before {
+      background: $black;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  section.square {
+    width: calc(100dvw - 2rem);
+    height: calc(100dvh - 3rem);
+
+    footer {
+      padding-top: 0.25rem;
+    }
+  }
+}

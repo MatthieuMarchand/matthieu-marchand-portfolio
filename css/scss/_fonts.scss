@@ -1,0 +1,26 @@
+@mixin font($font-family: $regular, $font-size: null) {
+  font-family: $font-family;
+
+  @if ($font-size) {
+    font-size: $font-size;
+  }
+}
+
+@font-face {
+  font-family: "Thunder-SemiBoldHC";
+  src: url("/fonts/Thunder-SemiBoldHC.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Light";
+  src: url("/fonts/Satoshi-Light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
