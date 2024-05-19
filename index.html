@@ -63,9 +63,32 @@ et à sa maintenabilité."
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script defer src="js/navHeader.js"></script>
   </head>
   <body>
     <section id="home" class="square">
+      <header title="Menu" class="active" onclick="toggleHidden()">
+        <div class="burger-stick-1"></div>
+        <div class="burger-stick-2"></div>
+      </header>
+
+      <nav class="hidden">
+        <div class="nav-content">
+          <ul>
+            <li>
+              <a title="Accueil" href="#">Accueil</a>
+            </li>
+            <li>
+              <a title="Projets" href="#">Projets</a>
+            </li>
+            <li>
+              <a title="Contact" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       <div class="content">
         <img
           src="pictures/portrait_matthieu_marchand-desktop.webp"
@@ -91,18 +114,29 @@ et à sa maintenabilité."
             et à sa maintenabilité.
           </p>
 
-          <a href="#" class="cta-1">Voir mes projets</a>
+          <a title="Mes projets" href="#" class="cta-1">Voir mes projets</a>
         </div>
       </div>
 
       <footer>
         <a
+          title="LinkedIn"
           target="_blank"
           href="https://www.linkedin.com/in/matthieu-marchand-dev/"
           >LinkedIn</a
         >
-        <a target="_blank" href="https://github.com/MatthieuMarchand">GitHub</a>
-        <a target="_blank" href="/pictures/CV - Matthieu MARCHAND.pdf">CV</a>
+        <a
+          title="GitHub"
+          target="_blank"
+          href="https://github.com/MatthieuMarchand"
+          >GitHub</a
+        >
+        <a
+          title="Curriculum vitæ"
+          target="_blank"
+          href="/pictures/CV - Matthieu MARCHAND.pdf"
+          >CV</a
+        >
       </footer>
     </section>
   </body>

@@ -5,6 +5,18 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Thunder-SemiBoldLC";
+  src: url("/fonts/Thunder-SemiBoldLC.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Thunder-SemiBoldLCItalic";
+  src: url("/fonts/Thunder-SemiBoldLCItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "Satoshi-Regular";
   src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
   font-weight: normal;
@@ -16,6 +28,10 @@
   font-weight: normal;
   font-style: normal;
 }
+.hidden {
+  display: none;
+}
+
 html,
 body {
   background: #f6f6f6;
@@ -105,7 +121,7 @@ section.square footer a:hover::before {
   overflow: hidden;
   border: 1px solid #101010;
   padding: 1rem 4rem 1rem 2rem;
-  transition: 0.3s ease, opacity 0.15s;
+  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
 }
 
 .cta-1:hover {
@@ -120,7 +136,7 @@ section.square footer a:hover::before {
   left: 0;
   top: 50%;
   translate: -100% -50%;
-  transition: 0.3s ease, opacity 0.15s;
+  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
   opacity: 0;
 }
 
@@ -136,7 +152,7 @@ section.square footer a:hover::before {
   right: 0;
   top: 50%;
   translate: -2rem -50%;
-  transition: 0.3s ease, opacity 0.15s;
+  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
 }
 
 .cta-1:hover::after {
@@ -150,6 +166,89 @@ section.square footer a:hover::before {
   }
   .cta-1::after {
     content: url(/pictures/arrow-mobile.svg);
+  }
+}
+header {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem 0;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.75rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+header .burger-stick-1,
+header .burger-stick-2 {
+  height: 1px;
+  background: #101010;
+}
+header .burger-stick-1 {
+  width: 2rem;
+}
+header .burger-stick-2 {
+  width: 1.5rem;
+}
+
+nav {
+  z-index: 1;
+  background: #f6f6f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+nav .nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-left: 8rem;
+}
+nav .nav-content a {
+  position: relative;
+  font-family: "Thunder-SemiBoldLC";
+  font-size: 144px;
+  color: #101010;
+  text-decoration: unset;
+  text-transform: uppercase;
+  line-height: 90%;
+}
+nav .nav-content a::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid #101010;
+  box-sizing: border-box;
+  translate: calc(-100% - 0.5rem) -290%;
+}
+nav .nav-content a:hover {
+  font-family: "Thunder-SemiBoldLCItalic";
+}
+nav .nav-content a:hover::before {
+  background: #101010;
+}
+
+@media screen and (max-width: 55rem) {
+  nav .nav-content {
+    margin-left: 2rem;
+  }
+  nav .nav-content a {
+    font-size: 88px;
+  }
+  nav .nav-content a::before {
+    width: 10px;
+    height: 10px;
+    translate: calc(-100% - 0.5rem) -210%;
   }
 }
 section#home {
