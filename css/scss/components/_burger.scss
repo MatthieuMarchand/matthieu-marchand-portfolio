@@ -1,0 +1,62 @@
+$header-padding: 1.5rem;
+$burger-width: 2rem;
+$burger-height: 0.75rem;
+$burger-stick-height: 1px;
+$burger-stick-2-width: 1.5rem;
+$burger-stick-rotated-width: 1.41421rem;
+
+@mixin rotate-burger-stick($rotation) {
+  width: $burger-stick-rotated-width;
+  transform: rotateZ($rotation);
+}
+
+header {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem 0;
+  padding: $header-padding;
+  align-items: end;
+  border-radius: 100%;
+  cursor: pointer;
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    width: $burger-width;
+    height: $burger-height;
+
+    .burger-stick-1,
+    .burger-stick-2 {
+      height: $burger-stick-height;
+      background: $black;
+    }
+
+    .burger-stick-1 {
+      width: 100%;
+    }
+
+    .burger-stick-2 {
+      width: $burger-stick-2-width;
+    }
+  }
+
+  &.active {
+    .burger {
+      justify-content: center;
+      align-items: end;
+      height: 1rem;
+
+      .burger-stick-1 {
+        @include rotate-burger-stick(-45deg);
+      }
+
+      .burger-stick-2 {
+        @include rotate-burger-stick(45deg);
+      }
+    }
+  }
+}
