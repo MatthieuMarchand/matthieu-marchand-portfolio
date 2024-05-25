@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: /404.html
+
+User-agent: *
+Allow: /*.html$
+Allow: /*.css$
+Allow: /*.scss$
+Allow: /*.js$
+Allow: /*.woff2$
+Allow: /*.woff$
+
+# Sitemap: https://www.votresite.com/sitemap.xml

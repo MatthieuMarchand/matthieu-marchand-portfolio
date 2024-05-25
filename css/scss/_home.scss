@@ -3,59 +3,61 @@ section#home {
   justify-content: center;
   align-items: center;
 
-  .content {
-    height: 18rem;
-    display: flex;
-    gap: 3rem;
-  }
-}
-
-section#home .content .texts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  width: 100%;
-
-  .titles {
-    h1 {
-      @include font("Thunder-SemiBoldHC", 56px);
-      letter-spacing: 2px;
-    }
-
-    h2 {
-      @include font($light, 24px);
-    }
-  }
-}
-
-@media screen and (max-width: $breakpoint-mobile) {
-  section#home {
+  @include responsive(mobile) {
     justify-content: start;
   }
 
-  section#home .content {
-    flex-direction: column;
-    align-items: start;
-    height: unset;
-    gap: 2rem;
-    margin-left: 2rem;
+  .content {
+    display: flex;
+    gap: 3rem;
+
+    @include responsive(mobile) {
+      flex-direction: column;
+      align-items: start;
+      height: unset;
+      gap: 2rem;
+      margin-left: 2rem;
+    }
 
     img {
-      height: 10rem;
-      object-fit: contain;
+      object-fit: cover;
+
+      &:hover {
+        content: url("/pictures/portrait_matthieu_marchand-draw_2.png");
+      }
+
+      @include responsive(mobile) {
+        height: 10rem;
+        width: auto;
+        object-fit: contain;
+      }
     }
 
     .texts {
-      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      width: 100%;
+
+      @include responsive(mobile) {
+        gap: 2rem;
+      }
 
       .titles {
         h1 {
-          font-size: 36px;
+          @include font("Thunder-SemiBoldHC", 56px);
+          letter-spacing: 2px;
+          @include responsive(mobile) {
+            font-size: 36px;
+          }
         }
 
         h2 {
-          font-size: 20px;
+          @include font($light, 24px);
+          @include responsive(mobile) {
+            font-size: 20px;
+          }
         }
       }
     }

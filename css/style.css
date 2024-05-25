@@ -1,32 +1,37 @@
 @font-face {
   font-family: "Thunder-SemiBoldHC";
-  src: url("/fonts/Thunder-SemiBoldHC.woff2") format("woff2");
+  src: url("/fonts/Thunder-SemiBoldHC.woff2") format("woff2"), url("/fonts/Thunder-SemiBoldHC.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Thunder-SemiBoldLC";
-  src: url("/fonts/Thunder-SemiBoldLC.woff2") format("woff2");
+  src: url("/fonts/Thunder-SemiBoldLC.woff2") format("woff2"), url("/fonts/Thunder-SemiBoldLC.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Thunder-SemiBoldLCItalic";
-  src: url("/fonts/Thunder-SemiBoldLCItalic.woff2") format("woff2");
+  src: url("/fonts/Thunder-SemiBoldLCItalic.woff2") format("woff2"), url("/fonts/Thunder-SemiBoldLCItalic.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Satoshi-Regular";
-  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2"), url("/fonts/Satoshi-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Satoshi-Light";
-  src: url("/fonts/Satoshi-Light.woff2") format("woff2");
+  src: url("/fonts/Satoshi-Light.woff2") format("woff2"), url("/fonts/Satoshi-Light.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 .hidden {
   display: none;
@@ -256,33 +261,16 @@ section#home {
   justify-content: center;
   align-items: center;
 }
-section#home .content {
-  height: 18rem;
-  display: flex;
-  gap: 3rem;
-}
-
-section#home .content .texts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  width: 100%;
-}
-section#home .content .texts .titles h1 {
-  font-family: "Thunder-SemiBoldHC";
-  font-size: 56px;
-  letter-spacing: 2px;
-}
-section#home .content .texts .titles h2 {
-  font-family: "Satoshi-Light";
-  font-size: 24px;
-}
-
-@media screen and (max-width: 55rem) {
+@media (max-width: 55rem) {
   section#home {
     justify-content: start;
   }
+}
+section#home .content {
+  display: flex;
+  gap: 3rem;
+}
+@media (max-width: 55rem) {
   section#home .content {
     flex-direction: column;
     align-items: start;
@@ -290,17 +278,49 @@ section#home .content .texts .titles h2 {
     gap: 2rem;
     margin-left: 2rem;
   }
+}
+section#home .content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#home .content img:hover {
+  content: url("/pictures/portrait_matthieu_marchand-draw_2.png");
+}
+@media (max-width: 55rem) {
   section#home .content img {
     height: 10rem;
+    width: auto;
     -o-object-fit: contain;
        object-fit: contain;
   }
+}
+section#home .content .texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+}
+@media (max-width: 55rem) {
   section#home .content .texts {
     gap: 2rem;
   }
+}
+section#home .content .texts .titles h1 {
+  font-family: "Thunder-SemiBoldHC";
+  font-size: 56px;
+  letter-spacing: 2px;
+}
+@media (max-width: 55rem) {
   section#home .content .texts .titles h1 {
     font-size: 36px;
   }
+}
+section#home .content .texts .titles h2 {
+  font-family: "Satoshi-Light";
+  font-size: 24px;
+}
+@media (max-width: 55rem) {
   section#home .content .texts .titles h2 {
     font-size: 20px;
   }
