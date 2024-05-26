@@ -345,4 +345,39 @@ section#home .content .texts .titles h2 {
   section#home .content .texts .titles h2 {
     font-size: 20px;
   }
+}
+
+section#error404 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 8rem;
+}
+@media (max-width: 55rem) {
+  section#error404 .content {
+    margin: 0 2rem;
+  }
+}
+section#error404 .content h1 {
+  font-family: "Thunder-SemiBoldLC";
+  font-size: 144px;
+}
+@media (max-width: 55rem) {
+  section#error404 .content h1 {
+    font-size: 64px;
+    line-height: 56px;
+  }
+}
+section#error404 .content p {
+  font-family: "Satoshi-Light";
+  font-size: 24px;
+}
+@media (max-width: 55rem) {
+  section#error404 .content p {
+    font-size: 20px;
+  }
+}
+section#error404 .content p a {
+  color: #101010;
 }/*# sourceMappingURL=style.css.map */
