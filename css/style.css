@@ -126,7 +126,7 @@ section.square footer a:hover::before {
   overflow: hidden;
   border: 1px solid #101010;
   padding: 1rem 4rem 1rem 2rem;
-  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
+  transition: 0;
 }
 
 .cta-1:hover {
@@ -141,7 +141,7 @@ section.square footer a:hover::before {
   left: 0;
   top: 50%;
   translate: -100% -50%;
-  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
+  transition: 0;
   opacity: 0;
 }
 
@@ -157,7 +157,7 @@ section.square footer a:hover::before {
   right: 0;
   top: 50%;
   translate: -2rem -50%;
-  transition: 0.3s ease 0.05s, opacity 0.15s 0.05s;
+  transition: 0;
 }
 
 .cta-1:hover::after {
@@ -207,14 +207,15 @@ header.active .burger {
   justify-content: center;
   align-items: end;
   height: 1rem;
+  overflow: hidden;
 }
 header.active .burger .burger-stick-1 {
-  width: 1.41421rem;
-  transform: rotateZ(-45deg);
+  width: 2rem;
+  transform: rotateZ(-45deg) translate(0.35rem, 0.35rem);
 }
 header.active .burger .burger-stick-2 {
-  width: 1.41421rem;
-  transform: rotateZ(45deg);
+  width: 2rem;
+  transform: rotateZ(45deg) translate(0.35rem, -0.35rem);
 }
 
 nav {
@@ -252,7 +253,7 @@ nav .nav-content a::before {
   height: 0.75rem;
   border: 1px solid #101010;
   box-sizing: border-box;
-  translate: calc(-100% - 0.5rem) -290%;
+  translate: calc(-100% - 0.5rem) -270%;
 }
 nav .nav-content a:hover {
   font-family: "Thunder-SemiBoldLCItalic";
@@ -302,7 +303,9 @@ section#home .content img {
      object-fit: cover;
 }
 section#home .content img:hover {
-  content: url("/pictures/portrait_matthieu_marchand-draw_2.png");
+  content: url("/pictures/portrait_matthieu_marchand-draw_3.png");
+  border: 1px solid #101010;
+  box-sizing: border-box;
 }
 @media (max-width: 55rem) {
   section#home .content img {

@@ -23,7 +23,9 @@ section#home {
       object-fit: cover;
 
       &:hover {
-        content: url("/pictures/portrait_matthieu_marchand-draw_2.png");
+        content: url("/pictures/portrait_matthieu_marchand-draw_3.png");
+        border: 1px solid $black;
+        box-sizing: border-box;
       }
 
       @include responsive(mobile) {

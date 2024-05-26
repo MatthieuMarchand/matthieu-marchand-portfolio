@@ -1,14 +1,7 @@
 $header-padding: 1.5rem;
 $burger-width: 2rem;
 $burger-height: 0.75rem;
-$burger-stick-height: 1px;
 $burger-stick-2-width: 1.5rem;
-$burger-stick-rotated-width: 1.41421rem;
-
-@mixin rotate-burger-stick($rotation) {
-  width: $burger-stick-rotated-width;
-  transform: rotateZ($rotation);
-}
 
 header {
   z-index: 2;
@@ -31,7 +24,7 @@ header {
 
     .burger-stick-1,
     .burger-stick-2 {
-      height: $burger-stick-height;
+      height: 1px;
       background: $black;
     }
 
@@ -44,19 +37,20 @@ header {
     }
   }
 
-  &.active {
-    .burger {
-      justify-content: center;
-      align-items: end;
-      height: 1rem;
+  &.active .burger {
+    justify-content: center;
+    align-items: end;
+    height: 1rem;
+    overflow: hidden;
 
-      .burger-stick-1 {
-        @include rotate-burger-stick(-45deg);
-      }
+    .burger-stick-1 {
+      width: 2rem;
+      transform: rotateZ(-45deg) translate(0.35rem, 0.35rem);
+    }
 
-      .burger-stick-2 {
-        @include rotate-burger-stick(45deg);
-      }
+    .burger-stick-2 {
+      width: 2rem;
+      transform: rotateZ(45deg) translate(0.35rem, -0.35rem);
     }
   }
 }
